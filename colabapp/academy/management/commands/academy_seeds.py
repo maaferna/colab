@@ -46,6 +46,7 @@ class Command(BaseCommand):
             s.last_name = "Espinoza"
             s.email = "juan@gmail.com"
             s.username = "juan_espinoza"
+            s.is_staff = True
             s.set_password('123456')
             s.save()
 
@@ -54,6 +55,7 @@ class Command(BaseCommand):
             s.last_name = "Espinoza"
             s.email = "ramiro@gmail.com"
             s.username = "ramiro_espinoza"
+            s.is_staff = True
             s.set_password('123456')
             s.save()
         elif mode == "clear":
@@ -83,6 +85,7 @@ class Command(BaseCommand):
             t.last_name = "Alcachofa"
             t.bio = "Este es un bio del docente"
             t.username = "pepito"
+            t.is_staff = True
             t.set_password('123456')
             t.save()
 
@@ -91,6 +94,7 @@ class Command(BaseCommand):
             t.username = "carlito"
             t.last_name = "Alcachofa"
             t.bio = "Este es un bio del docente"
+            t.is_staff = True
             t.set_password('123456')
             t.save()
         elif mode == "clear":
