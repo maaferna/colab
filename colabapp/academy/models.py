@@ -1,10 +1,10 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 # Create your models here.
 
-class Teacher(models.Model):
-    first_name = models.CharField(max_length=128)
-    last_name = models.CharField(max_length=128)
+class Teacher(User):
+    #first_name = models.CharField(max_length=128)
+    #last_name = models.CharField(max_length=128)
     bio = models.CharField(max_length=500)
 
     def __str__(self):
@@ -25,10 +25,10 @@ class Subject(models.Model):
     def __str__(self):
         return self.course
 
-class Student(models.Model):
-    first_name = models.CharField(max_length=128)
-    last_name = models.CharField(max_length=128)
-    email = models.EmailField()
+class Student(User):
+    #first_name = models.CharField(max_length=128)
+    #last_name = models.CharField(max_length=128)
+    #email = models.EmailField()
     
     def __str__(self):
         return self.first_name + self.last_name

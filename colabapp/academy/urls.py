@@ -3,5 +3,5 @@ from . import views
 from .views import v_course_detail
 
 urlpatterns = [
-    path('course', v_course_detail),
+    path('course/<int:course_id>', v_course_detail),
 ]

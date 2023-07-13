@@ -45,12 +45,16 @@ class Command(BaseCommand):
             s.first_name = "Juancito"
             s.last_name = "Espinoza"
             s.email = "juan@gmail.com"
+            s.username = "juan_espinoza"
+            s.set_password('123456')
             s.save()
 
             s = Student()
             s.first_name = "Ramiro"
             s.last_name = "Espinoza"
             s.email = "ramiro@gmail.com"
+            s.username = "ramiro_espinoza"
+            s.set_password('123456')
             s.save()
         elif mode == "clear":
             Student.objects.all().delete()
@@ -78,12 +82,16 @@ class Command(BaseCommand):
             t.first_name = "Pepito"
             t.last_name = "Alcachofa"
             t.bio = "Este es un bio del docente"
+            t.username = "pepito"
+            t.set_password('123456')
             t.save()
 
             t = Teacher()
             t.first_name = "Carlito"
+            t.username = "carlito"
             t.last_name = "Alcachofa"
             t.bio = "Este es un bio del docente"
+            t.set_password('123456')
             t.save()
         elif mode == "clear":
             Teacher.objects.all().delete()
