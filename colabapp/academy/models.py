@@ -22,8 +22,9 @@ class Subject(models.Model):
     course = models.ForeignKey(Course, on_delete=models.PROTECT)
     teacher = models.ForeignKey(Teacher, on_delete=models.PROTECT)
     start_date = models.DateField()
+    
     def __str__(self):
-        return self.course
+        return self.course.name
 
 class Student(User):
     #first_name = models.CharField(max_length=128)
@@ -38,4 +39,4 @@ class Subcription(models.Model):
     student = models.ForeignKey(Student, on_delete=models.PROTECT)
     
     def __str__(self):
-        return self.subject + self.student
+        return self.subject.course.name
