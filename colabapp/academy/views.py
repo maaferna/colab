@@ -16,6 +16,14 @@ def v_course_detail(request, course_id):
     context = {
         'course': Course.objects.get(id = course_id)
     }
+    subject = Subject.objects.filter(course_id = course_id).last()
+    if subject is None:
+        return HttpResponseRedirect("/")
+    context['subs'] = subject
+    if request.user.is_authenticated:
+        if Student.objects.filter(id = request.user.id).exists():
+            verificar = Subcription.objects.filter(subject_id = subject.id, student_id = request.user.id)
+            context['subscribed'] = verificar
     return render(request, 'course.html', context)
 
 
